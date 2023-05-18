@@ -1,0 +1,324 @@
+//跑馬燈
+.marqueeBox {
+    width: 94%;
+    height: 30px;
+    background: $marquee_BG;
+    border-radius: 30px;
+    border: solid 1px $marquee_Border;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    margin: 10px auto;
+
+    &::before {
+        content: "";
+        width: 98%;
+        height: 80%;
+        background: $marquee_Linear;
+        border-radius: 30px;
+        position: absolute;
+        top: 1px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+
+    .marquee {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        i {
+            width: 26px;
+            height: 26px;
+            flex-shrink: 0;
+            margin: 0 5px 0 15px;
+        }
+
+        div {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            padding-bottom: 2px;
+
+            p {
+                display: inline-block;
+                color: $marquee_Word;
+                font-size: 3.4vw;
+                font-weight: bold;
+                animation: marquee 10s linear 0s infinite;
+                padding-left: 100%;
+                white-space: nowrap;
+            }
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    }
+
+    button {
+        width: auto;
+        height: 100%;
+        @include mainBtn;
+        flex-shrink: 0;
+        font-size: 3.7vw;
+        padding: 0 10px 2px;
+        border-radius: 0 30px 30px 0;
+    }
+}
+
+//登入區
+.memberArea {
+    width: 94%;
+    height: auto;
+    display: flex;
+    flex-shrink: 0;
+    margin: 0 auto;
+
+    //未登入樣式
+    .loginBox {
+        width: 42vw;
+        height: auto;
+        flex-shrink: 0;
+        margin-right: 8vw;
+        display: none;
+
+        &.display {
+            display: block;
+        }
+
+        p {
+            color: $mainWord_1;
+            font-size: 4vw;
+            font-weight: bold;
+        }
+        
+        div {
+            margin-top: 3vw;
+            font-size: 0;
+            
+            button {
+                width: 20vw;
+                height: 9vw;
+                @include mainBtn;
+
+                &:last-child {
+                    @include secondBtn;
+                    margin-left: 2vw;
+                }
+            }
+        }
+    }
+
+    //已登入樣式
+    .alLogin {
+        width: 42vw;
+        height: auto;
+        flex-shrink: 0;
+        margin-right: 8vw;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &.display {
+            display: flex;
+        }
+
+        .account {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            p {
+                width: 100%;
+                height: 4vw;
+                color: $mainWord_1;
+                font-size: 3.4vw;
+                font-weight: bold;
+                @include wordHidden;
+            }
+
+            .lv {
+                width: 21vw;
+                height: 5vw;
+                @include LVstyle;
+                flex-shrink: 0;
+            }
+        }
+        
+        .money {
+            color: $money;
+            font-size: 5vw;
+            font-weight: bold;
+        }
+    }
+
+    //轉存提+vip
+    .operate {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        button {
+            width: auto;
+            height: auto;
+            background: none;
+            
+            i {
+                width: 8vw;
+                height: 8vw;
+
+                &.deposit {
+                    background-position-x: 0;
+                }
+                &.transfer {
+                    background-position-x: 25%;
+                }
+                &.withdrawal {
+                    background-position-x: 50%;
+                }
+                &.vip {
+                    background-position-x: 75%;
+                }
+            }
+
+            p {
+                color: $mainWord_1;
+                font-size: 3.4vw;
+                font-weight: bold;
+                padding-top: 1vw;
+            }
+        }
+    }
+}
+
+//遊戲區
+.homeCenter {
+    width: 94%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    margin: 10px auto 0;
+    padding-bottom: 10px;
+
+    //遊戲種類選單
+    .gameList {
+        width: 26vw;
+        height: auto;
+        display: grid;
+        grid-template-rows: repeat(6,1fr);
+        grid-gap: 10px 0;
+        align-self: flex-start;
+        flex-shrink: 0;
+
+        li {
+            width: 100%;
+            height: 60px;
+            @include secondBtn;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 3vw;
+
+            i {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    //遊戲選擇
+    .gameBox {
+        width: 100%;
+        height: auto;
+        display: none;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 5px;
+        align-content: flex-start;
+        margin-left: 10px;
+
+        &.display {
+            display: grid;
+        }
+
+        li {
+            width: auto;
+            height: auto;
+            position: relative;
+
+            .textBox {
+                width: 100%;
+                height: auto;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 2vw;
+
+                p {
+                    font-weight: bold;
+                    
+                    &.title {
+                        color: $homeCenter_gameBox_Title;
+                        font-size: 4vw;
+                        padding-bottom: 1vw;
+                    }
+    
+                    &.eng {
+                        color: $homeCenter_gameBox_English;
+                        font-size: 3.7vw;
+                        line-height: 4vw;
+                    }
+                }
+            }
+
+            .fixBox {
+                width: 100%;
+                height: 100%;
+                background: $filter;
+                border-radius: 5px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                p {
+                    color: $title_1;
+                    font-size: 2vw;
+                    font-weight: bold;
+                    text-align: center;
+
+                    &:first-child {
+                        font-size: 4vw;
+                    }
+                    &:nth-of-type(2) {
+                        margin-top: 4vw;
+                    }
+                    &:nth-of-type(3) {
+                        margin: 5px 0;
+                    }
+                }
+            }
+        }
+    }
+}

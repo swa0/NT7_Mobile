@@ -1,0 +1,463 @@
+//會員中心
+.memberWrap {
+    @include bgStyle_1;
+
+    //玩家資訊
+    .user {
+        width: 100%;
+        height: auto;
+        background: $mainBG_1;
+        padding-bottom: 16px;
+        margin-bottom: 10px;
+
+        //上列
+        .info {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            padding: 20px 15px;
+
+            //左
+            div {
+
+                .account {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 6px;
+                    font-size: 16px;
+                    letter-spacing: 2px;
+                    color: $mainWord_1;
+                    font-weight: bold;
+
+                    .lv {
+                        width: 21vw;
+                        height: 5vw;
+                        margin-right: 9px;
+                        @include LVstyle;
+                    }
+                }
+
+                .date {
+                    font-size: 13px;
+                    letter-spacing: 1px;
+                    font-weight: bold;
+                    color: $mainWord_2;
+                }
+            }
+
+            //右
+            .infoBtn {
+                width: auto;
+                height: auto;
+                @include mainBtn;
+                font-size: 3.7vw;
+                padding: 3px 15px;
+            }
+        }
+
+        //存款提示框
+        .walletBox {
+            width: 100%;
+            height: 8.27vw;
+            display: flex;
+            padding: 0 15px;
+            margin-bottom: 12px;
+
+            p {
+                width: 100%;
+                height: 100%;
+                @include member_WalletBox;
+            }
+
+            button {
+                width: 27.73vw;
+                height: 100%;
+                @include mainBtn;
+                border-radius: 0 5vw 5vw 0;
+                font-size: 3.7vw;
+            }
+        }
+
+        //大按鈕列
+        .btnBox {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+
+            button {
+                width: 49%;
+                height: 18.4vw;
+                @include secondBtn;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:active,&.active {
+
+                    .text {
+
+                        p {
+                            color: $secondBtn_Word;
+                        }
+                    }
+                }
+
+                i {
+                    width: 28px;
+                    height: 28px;
+                }
+
+                .text {
+                    font-size: 4.5vw;
+                    font-weight: bold;
+                    letter-spacing: 2px;
+                    margin-left: 3vw;
+
+                    p {
+                        color: $mainWord_2;
+                        font-size: 2vw;
+                        font-weight: bold;
+                        letter-spacing: 1px;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+
+        //其他選單列
+        ul {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+            margin-top: 16px;
+
+            li {
+                width: 20vw;
+                height: auto;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                i {
+                    display: block;
+                    width: 8vw;
+                    height: 8vw;
+                }
+
+                p {
+                    color: $mainWord_1;
+                    font-size: 2vw;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    margin-top: 1vw;
+                }
+
+                .bubble {
+                    min-width: 20px;
+                    min-height: 20px;
+                    top: -7px;
+                    right: 10px;
+                    @include member_Bubble;
+                }
+            }
+        }
+    }
+
+    //選項條
+    .options {
+        width: 92vw;
+        height: 50px;
+        @include secondBtn;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:active,&.active {
+
+            .arrow_ic {
+                background-position-y: 100%;
+            }
+        }
+
+        .option_ic {
+            width: 18px;
+            height: 18px;
+            margin-right: 2vw;
+        }
+
+        p {
+            width: auto;
+            height: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .arrow_ic {
+            width: 10px;
+            height: 17px;
+            transform: scaleX(-1);
+            margin-right: 2vw;
+        }
+    }
+}
+
+//會員中心內頁滑軸
+.memberList {
+    width: 100%;
+    height: auto;
+
+    ul {
+        width: 100%;
+        height: auto;
+        @include chooseStyle_1;
+
+        li {
+            width: 50%;
+            height: 40px;
+        }
+    }
+}
+
+//會員中心內頁基本情報
+.memberInfo {
+    @include bgStyle_1;
+    height: calc(100vh - 146px);
+
+    form {
+        width: 100%;
+        height: auto;
+
+        ul {
+            width: 100%;
+            height: auto;
+
+            li {
+                width: 100%;
+                height: auto;
+                padding: 0 16px;
+                border-bottom: solid 1px $mainBorder_2;
+
+                &>div {
+                    width: 100%;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    &.autoBox {
+                        height: auto;
+                        padding: 12px 0;
+                    }
+                    &.btnBox {
+                        align-items: flex-start;
+                        justify-content: flex-end;
+                    }
+
+                    p {
+                        width: 26vw;
+                        color: $mainWord_1;
+                        font-size: 3.4vw;
+                        font-weight: bold;
+                        flex-shrink: 0;
+
+                        em {
+                            margin-right: 2vw;
+                            position: relative;
+
+                            &.noCheck {
+                                
+                                &::before {
+                                    top: 56%;
+                                }
+                            }
+
+                            &::before {
+                                content: "";
+                                width: 4vw;
+                                height: 4vw;
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%,-50%);
+                            }
+                        }
+                    }
+
+                    label {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+
+                        input[type="date"] {
+                            padding-right: 5px;
+                        }
+
+                        .date_ic {
+                            width: 16px;
+                            height: 16px;
+                            position: absolute;
+                            right: 0;
+                            pointer-events: none;
+                        }
+                    }
+
+                    input {
+                        width: 100%;
+                        height: 42px;
+                        @include memberInput;
+                    }
+
+                    .remind {
+                        display: block;
+                        color: $remind;
+                        font-size: 2vw;
+                        font-weight: bold;
+                    }
+
+                    button {
+                        width: 30%;
+                        height: 32px;
+                        @include mainBtn;
+
+                        &.saveBtn {
+                            width: 92vw;
+                            height: 42px;
+                        }
+                    }
+
+                    .security {
+                        width: 92vw;
+                        height: 42px;
+                        @include bgStyle_2;
+                        background: $mainBG_1;
+                        display: flex;
+                        align-items: center;
+                        padding: 0 32px;
+
+                        p {
+                            width: 100%;
+                            color: $member_Security_Title;
+                            font-size: 3.7vw;
+                            font-weight: bold;
+
+                            span {
+                                padding-left: 1vw;
+
+                                &.low {
+                                    color: $member_Security_Low;
+                                }
+                                &.middle {
+                                    color: $member_Security_Middle;
+                                }
+                                &.high {
+                                    color: $member_Security_High;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//會員中心平台帳戶資訊
+.memberPlatform {
+    @include bgStyle_1;
+    height: calc(100vh - 146px);
+
+    .platformBox {
+        width: 92vw;
+        height: auto;
+        @include bgStyle_2;
+        overflow: hidden;
+        margin: 0 auto 12px;
+
+        &:first-child {
+            margin-top: 24px;
+        }
+
+        .title {
+            width: 100%;
+            height: 42px;
+            @include titleBG_1;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+
+            p {
+                color: $title_1;
+                font-size: 4vw;
+                font-weight: bold;
+            }
+        }
+
+        .content {
+            width: 100%;
+            height: auto;
+            padding: 5px 16px;
+
+            li {
+                width: 100%;
+                height: auto;
+                display: flex;
+                align-items: center;
+                margin-bottom: 2px;
+
+                &:last-child {
+                    margin: 0;
+                }
+
+                p {
+                    width: 100%;
+                    color: $mainWord_1;
+                    font-size: 3.4vw;
+                    font-weight: bold;
+
+                    &:first-child {
+                        width: 20%;
+                        flex-shrink: 0;
+                    }
+                    &:nth-of-type(2) {
+                        display: flex;
+                    }
+
+                    span {
+                        width: 100%;
+                        color: $money;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    button {
+                        width: auto;
+                        height: 25px;
+                        @include secondBtn;
+                        font-size: 2vw;
+                        flex-shrink: 0;
+
+                        &.un {
+                            opacity: 0;
+                            pointer-events: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="../js/javascript.js"></script>
+    <link rel="shortcut icon" href="../images/64X64.ico" type="image/x-icon">
+</head>
+<body>
+    <!--header-->
+    <header>
+        <!--content-->
+        <div class="content inner">
+            <div class="title">綁定銀行卡</div>
+            <i class="back_arrow" onclick="window.location.href='./member.html'"></i>
+        </div>
+    </header>
+    <!--main-->
+    <main>
+        <!--銀行卡-->
+        <div class="cardList">
+            <div class="cardBox">
+                <p class="title">
+                    卡片數量<span> 0 / 5</span>
+                </p>
+                <ul>
+                    <li class="empty">
+                        <div class="add"></div>
+                        <p class="emptyWord">請先綁定一張銀行卡，用於收款</p>
+                    </li>
+                    <li class="wait">
+                        <p class="innerTitle">中央信託</p>
+                        <p class="smallTitle">010</p>
+                        <p class="account">0002220003</p>
+                        <div class="ing">審核中</div>
+                    </li>
+                    <li>
+                        <p class="innerTitle">中央信託</p>
+                        <p class="smallTitle">010</p>
+                        <p class="account">0002220003</p>
+                        <div class="ing">審核中</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--內容-->
+        <div class="cardContent">
+            <ul>
+                <li>
+                    <p class="title">銀行名稱</p>
+                    <input type="text" name="" id="">
+                    <p class="remind">輸入一個相關字，產生銀行選單</p>
+                </li>
+                <li>
+                    <p class="title">分行名稱</p>
+                    <input type="text" name="" id="">
+                </li>
+                <li>
+                    <p class="title">開戶姓名</p>
+                    <input type="text" name="" id="" value="美術一">
+                </li>
+                <li>
+                    <p class="title">銀行帳號</p>
+                    <input type="text" name="" id="">
+                    <p class="remind">請認真校對銀行帳號，帳號錯誤資金將無法到賬!</p>
+                </li>
+                <li>
+                    <p class="title">確認帳號</p>
+                    <input type="text" name="" id="">
+                    <p class="remind">請認真校對銀行帳號，帳號錯誤資金將無法到賬!</p>
+                </li>
+                <button class="check">確認</button>
+            </ul>
+        </div>
+    </main>
+    <!--footer-->
+    <footer>
+        <ul>
+            <li onclick="window.location.href='./index_inner.html'">
+                <i class="list_ic menu"></i>
+                <p>首頁</p>
+            </li>
+            <li onclick="window.location.href='./event.html'">
+                <i class="list_ic event"></i>
+                <p>優惠</p>
+            </li>
+            <li onclick="window.location.href='./wallet.html'">
+                <i class="list_ic wallet"></i>
+                <p>存轉提</p>
+            </li>
+            <li onclick="window.location.href='./help_often_contact.html'">
+                <i class="list_ic service"></i>
+                <p>客服</p>
+            </li>
+            <li class="active" onclick="window.location.href='./member.html'">
+                <i class="list_ic center"></i>
+                <p>會員中心</p>
+            </li>
+        </ul>
+    </footer>
+    <!--彈窗-->
+    <div class="filter">
+        <div class="jumpWindow plsGo display">
+            <div class="title">
+                <p>提示</p>
+                <i class="close"></i>
+            </div>
+            <div class="content">請至個人頁面綁定資料</div>
+            <button class="close">確認</button>
+        </div>
+        <div class="jumpWindow plsGo2">
+            <div class="title">
+                <p>提示</p>
+                <i class="close"></i>
+            </div>
+            <div class="content">已有資料審核中</div>
+            <button class="close">確認</button>
+        </div>
+    </div>
+    <!--背景-->
+    <div class="bg"></div>
+</body>
+</html>

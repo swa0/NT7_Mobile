@@ -1,0 +1,332 @@
+//優惠選擇列
+.eventApplyType {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+
+    ul {
+        width: 100%;
+        height: auto;
+        @include chooseStyle_1;
+
+        li {
+            width: 34%;
+            height: 40px;
+        }
+    }
+}
+
+//優惠列表
+.applyList {
+    @include bgStyle_1;
+    height: calc(100vh - 160px);
+    display: none;
+
+    &.display {
+        display: block;
+    }
+
+    &.record {
+        overflow: hidden;
+    }
+
+    .listBox {
+        width: 100%;
+        height: auto;
+        padding: 0 16px;
+
+        .list {
+            width: 100%;
+            height: auto;
+            @include bgStyle_2;
+            margin-bottom: 10px;
+            overflow: hidden;
+
+            .title {
+                width: 100%;
+                height: 42px;
+                @include titleBG_1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                p {
+                    color: $title_1;
+                    font-size: 4vw;
+                    font-weight: bold;
+                }
+            }
+
+            ul {
+                width: 100%;
+                height: auto;
+                padding-top: 16px;
+
+                li {
+                    width: 100%;
+                    height: auto;
+                    color: $mainWord_1;
+                    font-size: 3.4vw;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+                    padding: 0 16px;
+
+                    &.cur {
+                        background: $currentBG;
+                        padding: 8px 16px;
+                    }
+
+                    .num {
+                        color: $money;
+                        font-size: 3.4vw;
+                        font-weight: bold;
+
+                        &.noLimit {
+                            color: $remind;
+                        }
+                        
+                        .total {
+                            color: $title_1;
+                        }
+                    }
+                }
+            }
+
+            .btnBox {
+                width: 100%;
+                height: auto;
+                padding: 16px;
+                display: flex;
+                justify-content: space-between;
+
+                button {
+                    width: 48%;
+                    height: 32px;
+
+                    &.hidden {
+                        opacity: 0;
+                        pointer-events: none
+                    }
+
+                    &.applyBtn {
+                        @include mainBtn;
+                        font-size: 3.4vw;
+                    }
+
+                    &.checkBtn {
+                        @include secondBtn;
+                        font-size: 3.4vw;
+                    }
+                }
+            }
+        }
+    }
+
+    //上搜尋列
+    .searchContent {
+        width: 100%;
+        height: auto;
+        background: $mainBG_1;
+        padding: 16px;
+        flex-shrink: 0;
+
+        .top {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+
+            .full {
+                width: 100%;
+
+                &.second {
+                    margin-top: 10px;
+                }
+
+                p {
+                    color: $mainWord_1;
+                    font-size: 14px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    margin-bottom: 10px;
+                }
+
+                .inputBox {
+                    width: 100%;
+                    height: 42px;
+                    @include bgStyle_2;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    color: $money;
+                    font-size: 4vw;
+                    font-weight: bold;
+
+                    label {
+                        width: auto;
+                        height: 100%;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+
+                        input {
+                            width: auto;
+                            height: 100%;
+                            @include memberInput;
+                            padding-right: 20px;
+                        }
+
+                        i {
+                            width: 16px;
+                            height: 16px;
+                            position: absolute;
+                            right: 0;
+                            pointer-events: none;
+                        }
+                    }
+                }
+
+                .selectBox {
+                    width: 100%;
+                    height: 42px;
+
+                    select {
+                        width: 100%;
+                        height: 100%;
+                        @include mainSelect;
+                    }
+                }
+            }
+        }
+
+        .date {
+            width: 100%;
+            height: auto;
+            display: flex;
+            margin: 20px 0;
+
+            button {
+                width: 25%;
+                height: 38px;
+                @include secondBtn;
+                border-radius: 0;
+                border-right-width: 0;
+
+                &:nth-of-type(1) {
+                    border-radius: 5px 0 0 5px;
+                }
+            
+                &:last-child {
+                    border-radius: 0 5px 5px 0;
+                    border-right-width: 1px;
+                }
+            }
+        }
+
+        .check {
+            width: 100%;
+            height: 42px;
+            @include mainBtn;
+        }
+    }
+
+    //列表
+    .recordList {
+        width: 100%;
+        height: calc(100vh - 454px);
+        padding: 10px 16px;
+        overflow-y: auto;
+
+        //無資料
+        .noData {
+            @include noData;
+        }
+
+        //列表內容
+        .recordBox {
+            display: none;
+            width: 100%;
+            height: auto;
+            @include bgStyle_2;
+            margin-bottom: 10px;
+            overflow: hidden;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            &.display {
+                display: block;
+            }
+
+            .title {
+                width: 100%;
+                height: 42px;
+                @include titleBG_1;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 16px;
+
+                p {
+                    color: $title_1;
+                    font-size: 4vw;
+                    font-weight: bold;
+                }
+                
+                .date {
+                    color: $mainWord_2;
+                    font-size: 2vw;
+                    font-weight: bold;
+
+                    span {
+                        color: $money;
+                    }
+                }
+
+                button {
+                    width: auto;
+                    height: 28px;
+                    @include mainBtn;
+                    font-size: 3.4vw;
+                }
+            }
+
+            ul {
+                width: 100%;
+                height: auto;
+                padding: 16px;
+
+                li {
+                    width: 100%;
+                    height: auto;
+                    color: $mainWord_1;
+                    font-size: 3.4vw;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+
+                    &:last-child {
+                        margin: 0;
+                    }
+
+                    p {
+                        width: 70%;
+                        font-size: 3.4vw;
+                        @include wordHidden;
+                        text-align: right;
+
+                        &.num {
+                            color: $money;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

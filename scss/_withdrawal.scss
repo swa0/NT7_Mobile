@@ -1,0 +1,236 @@
+//提款
+.withWrap {
+    @include bgStyle_1;
+
+    //上半
+    .walletBox {
+        width: 100%;
+        height: auto;
+        background: $mainBG_1;
+        padding-top: 24px;
+
+        //內容
+        .content {
+            width: 92vw;
+            height: auto;
+            @include bgStyle_2;
+            padding: 16px;
+            margin: 0 auto;
+
+            .title {
+                color: $mainWord_1;
+                font-size: 3.4vw;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                margin-bottom: 4vw;
+
+                i {
+                    margin-left: 10px;
+                    width: 4vw;
+                    height: 4vw;
+                }
+            }
+
+            .amount {
+                color: $money;
+                font-size: 7vw;
+                font-weight: bold;
+            }
+        }
+
+        .detail {
+            width: 100%;
+            height: auto;
+            border-bottom: solid 1px $mainBorder_2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px;
+
+            p {
+                color: $mainWord_1;
+                font-size: 3.7vw;
+                font-weight: bold;
+                display: flex;
+                flex-direction: column;
+
+                &.num {
+                    color: $money;
+                    font-size: 4vw;
+                }
+
+                button {
+                    width: auto;
+                    height: 24px;
+                    @include mainBtn;
+                    font-size: 2vw;
+                    margin-top: 1.5vw;
+                }
+            }
+        }
+
+        //查看錢包明細
+        .walletDetail {
+            width: 100%;
+            height: auto;
+            padding: 12px 16px;
+
+            .check {
+                width: 100%;
+                height: 42px;
+                @include mainBtn;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                i {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 6px 4px 0 4px;
+                    border-color: $secondBtn_Word transparent;
+                    margin-left: 8px;
+                }
+            }
+
+            .detailBox {
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+
+                &.active {
+                    height: auto;
+                    margin-top: 10px;
+                }
+    
+                ul {
+                    width: 100%;
+                    height: auto;
+                    display: grid;
+                    grid-template-columns: repeat(3,1fr);
+                    grid-gap: 1.5vw;
+    
+                    li {
+                        width: auto;
+                        height: auto;
+                        @include secondBtn;
+                        padding: 12px;
+                        pointer-events: none;
+        
+                        div {
+                            color: $mainWord_1;
+                            font-size: 2vw;
+                            font-weight: bold;
+                            letter-spacing: 1px;
+                            line-height: 4vw;
+                        }
+        
+                        p {
+                            color: $money;
+                            font-size: 5vw;
+                            font-weight: bold;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //下半
+    .withContent {
+        width: 100%;
+        height: auto;
+        padding: 16px;
+
+        .innerRemind {
+            width: 100%;
+            height: auto;
+            background: $mainBG_2;
+            border: solid 1px $mainBorder_2;
+            border-radius: 5px;
+            display: flex;
+            padding: 12px;
+            margin-bottom: 24px;
+
+            i {
+                width: 4vw;
+                height: 4vw;
+                margin-right: 12px;
+            }
+
+            p {
+                color: $mainWord_2;
+                font-size: 3.4vw;
+                font-weight: bold;
+                line-height: 4vw;
+            }
+        }
+
+        select {
+            width: 100%;
+            height: 42px;
+            @include mainSelect;
+        }
+        
+        .smallRemind {
+            color: $mainWord_2;
+            font-size: 2vw;
+            font-weight: bold;
+            margin-top: 5px;
+
+            span {
+                color: $remind;
+                padding-left: 2vw;
+            }
+        }
+
+        input {
+            width: 100%;
+            height: 42px;
+            @include mainInput;
+            margin-top: 12px;
+        }
+
+        .check {
+            width: 100%;
+            height: 42px;
+            @include mainBtn;
+            margin-top: 12px;
+        }
+    }
+
+    //提醒
+    .remindBox {
+        width: 92vw;
+        height: auto;
+        @include bgStyle_2;
+        padding: 16px;
+        margin: 0 auto;
+
+        p {
+            color: $mainWord_1;
+            font-size: 3.4vw;
+            font-weight: bold;
+            line-height: 4vw;
+            margin-bottom: 8px;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            &.title {
+                color: $title_1;
+                font-size: 4vw;
+                font-weight: bold;
+                letter-spacing: 1px;
+                margin-bottom: 16px;
+            }
+
+            .sp {
+                color: $remind;
+            }
+        }
+    }
+}

@@ -1,0 +1,564 @@
+//VIP會員
+.vipWrap {
+    @include bgStyle_1;
+
+    //上部
+    .topBox {
+        width: 100%;
+        height: auto;
+        padding-bottom: 16px;
+        border-bottom: solid 1px $mainBorder_2;
+
+        .board {
+            width: 100%;
+            height: auto;
+            padding: 16px;
+
+            .content {
+                width: 100%;
+                height: auto;
+                margin-bottom: 13.33vw;
+                position: relative;
+
+                .account {
+                    color: $mainWord_1;
+                    font-size: 4vw;
+                    font-weight: bold;
+                    letter-spacing: 2px;
+                    margin-bottom: 12px;
+                }
+
+                .textBox {
+                    color: $mainWord_1;
+                    font-size: 3.4vw;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    margin-bottom: 12px;
+
+                    span {
+                        color: $money;
+
+                        &.limit {
+                            color: $mainWord_2;
+                        }
+                    }
+                }
+
+                .medal {
+                    width: 22.93vw;
+                    height: 30.13vw;
+                    position: absolute;
+                    top: -4vw;
+                    right: 5vw;
+                }
+            }
+
+            .exBar {
+                width: 100%;
+                height: auto;
+
+                .level {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 9px;
+
+                    p {
+                        color: $mainWord_2;
+                        font-size: 3.4vw;
+                        font-weight: bold;
+                        letter-spacing: 1px;
+
+                        &.cur {
+                            color: $mainWord_1;
+                        }
+                    }
+                }
+
+                .bar {
+                    width: 100%;
+                    height: 8px;
+                    background: $mainBG_1;
+                    border: solid 1px $mainBorder_1;
+                    border-radius: 4px;
+
+                    .cur {
+                        width: 20%;
+                        height: 100%;
+                        border-radius: 4px;
+                        background: $vip_LevelCur;
+                        position: relative;
+
+                        .percent {
+                            width: auto;
+                            height: auto;
+                            background: $vip_LevelCur;
+                            border-radius: 3px;
+                            color: $vip_LevelWord;
+                            font-size: 2vw;
+                            font-weight: bold;
+                            position: absolute;
+                            top: -28px;
+                            right: -20px;
+                            padding: 3px 9px;
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                width: 0;
+                                height: 0;
+                                border-style: solid;
+                                border-width: 6px 4px 0 4px;
+                                border-color: $vip_LevelCur transparent;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                bottom: -6px;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        .levelBox {
+            width: 92vw;
+            height: 5vw;
+            margin: 0 auto;
+            position: relative;
+
+            div {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+
+                hr {
+                    width: 100%;
+                    border: solid 1px $mainBorder_1;
+                }
+            }
+
+            ul {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                overflow-x: auto;
+
+                li {
+                    width: 10.66vw;
+                    height: 100%;
+                    background: $mainBG_1;
+                    border-radius: 20px;
+                    border: solid 1px $mainBorder_1;
+                    color: $mainWord_1;
+                    font-size: 2vw;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    margin-right: 10.99vw;
+                    padding-bottom: 2px;
+
+                    &.cur {
+                        background: $vip_LevelLinear;
+                        color: $vip_LevelWord;
+                    }
+
+                    &:last-child {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+        .cardBox {
+            width: 100%;
+            height: 47.46vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding: 0 2vw;
+            margin-top: 16px;
+            position: relative;
+
+            i:not(.medal) {
+                width: 2vw;
+                height: 3.4vw;
+
+                &.next {
+                    transform: scaleX(-1);
+                }
+            }
+
+            .medal {
+                width: 18vw;
+                height: 27vw;
+                position: absolute;
+                left: 8vw;
+                top: 0;
+            }
+
+            .card {
+                width: 87.27vw;
+                height: 47.46vw;
+                overflow-x: auto;
+                
+                ul {
+                    display: flex;
+                    width: auto;
+                    height: auto;
+
+                    li {
+                        width: 87.27vw;
+                        height: 47.46vw;
+                        display: flex;
+                        align-items: flex-end;
+                        flex-shrink: 0;
+                        padding: 0 6.67vw;
+                        position: relative;
+
+                        &>div {
+                            width: 100%;
+                            height: auto;
+                            display: flex;
+                            justify-content: space-around;
+                            margin-bottom: 30px;
+
+                            .textBox {
+                                width: auto;
+                                height: 40px;
+                                color: $mainWord_1;
+                                font-size: 3.4vw;
+                                font-weight: bold;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: space-between;
+    
+                                p {
+                                    color: $money;
+                                    font-size: 4vw;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //會員權利
+    .enjoyBox {
+        width: 100%;
+        height: auto;
+        padding: 16px;
+        border-bottom: solid 1px $mainBorder_2;
+
+        .title {
+            color: $title_1;
+            font-size: 4vw;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        ul {
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-gap: 10px;
+
+            li {
+                width: auto;
+                height: auto;
+                @include secondBtn;
+                font-size: 2vw;
+                padding: 6px 12px;
+                pointer-events: none;
+
+                p {
+                    font-size: 5vw;
+                    color: $money;
+                    margin-top: 8px;
+                }
+            }
+        }
+    }
+    
+    //查看VIP詳情
+    .checkBtn {
+        width: 92vw;
+        height: 50px;
+        @include secondBtn;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px auto 0;
+
+        &:active,&.active {
+
+            i {
+                background-position-y: 100%;
+            }
+        }
+
+        .arrow_ic {
+            width: 2vw;
+            height: 3.4vw;
+            transform: scaleX(-1);
+        }
+    }
+}
+
+//各層級詳情
+.vipDetail {
+    @include bgStyle_1;
+
+    .lvWrap {
+        width: 100%;
+        height: auto;
+        background: $mainBG_1;
+        position: relative;
+        margin: 10px 0;
+        padding: 12px 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .title {
+            color: $title_1;
+            font-size: 5vw;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .list {
+            width: 100%;
+            height: auto;
+            @include bgStyle_2;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 15px;
+
+            i {
+                width: 10px;
+                height: 38px;
+                background: $mainBG_2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 0;
+                z-index: 1;
+                padding-top: 2px;
+
+                &.prev {
+                    left: 19vw;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 7px;
+                        height: 14px;
+                        z-index: 1;
+                    }
+                }
+
+                &.next {
+                    right: 0;
+                    padding: 2px 2vw 0;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 7px;
+                        height: 14px;
+                        z-index: 1;
+                        transform: scaleX(-1);
+                    }
+                }
+            }
+
+            .left {
+                width: 20%;
+                height: auto;
+
+                li {
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+
+                    &:nth-of-type(2n) {
+                        background: $mainBG_1;
+                    }
+
+                    &.smallTitle {
+                        border-bottom: solid 1px $mainBorder_1;
+
+                        p {
+                            color: $title_1;
+                        }
+                    }
+
+                    p {
+                        width: 100%;
+                        border-right: solid 1px $mainBorder_2;
+                        color: $mainWord_1;
+                        font-size: 3.4vw;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .right{
+                width: 80%;
+                height: auto;
+                display: flex;
+                overflow-x: auto;
+                position: relative;
+
+                ul {
+                    width: auto;
+                    height: auto;
+                    flex-shrink: 0;
+
+                    &:last-child {
+
+                        li {
+
+                            p {
+                                border: none;
+                            }
+                        }
+                    }
+
+                    li {
+                        width: auto;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+
+                        &:nth-of-type(2n) {
+                            background: $mainBG_1;
+                        }
+    
+                        &.smallTitle {
+                            border-bottom: solid 1px $mainBorder_1;
+    
+                            p {
+                                color: $title_1;
+                            }
+                        }
+    
+                        p {
+                            width: 100%;
+                            border-right: solid 1px $mainBorder_2;
+                            color: $money;
+                            font-size: 3.4vw;
+                            font-weight: bold;
+                            text-align: center;
+                            padding: 0 16px;
+                        }
+                    }
+                }
+            }
+
+            .finger {
+                width: 7vw;
+                height: 10vw;
+                position: absolute;
+                right: 4vw;
+                bottom: 2vw;
+                animation: disappear 4s ease 0s infinite;
+    
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -10px;
+                    left: -20%;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-color: transparent $remind;
+                    border-width: 6px 8px 6px 0;
+                    animation: moveL 2s ease 0s infinite;
+                }
+    
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: -10px;
+                    right: 12%;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-color: transparent $remind;
+                    border-width: 6px 0 6px 8px;
+                    animation: moveR 2s ease 0s infinite;
+                }
+            }
+    
+            @keyframes disappear {
+                0% {
+                    opacity: 0;
+                }
+    
+                25% {
+                    opacity: 1;
+                }
+    
+                75% {
+                    opacity: 1;
+                }
+    
+                100% {
+                    opacity: 0;
+                }
+            }
+    
+            @keyframes moveL {
+                0% {
+                    transform: translateX(0);
+                }
+    
+                50% {
+                    transform: translateX(-140%);
+                }
+    
+                100% {
+                    transform: translateX(0);
+                }
+            }
+    
+            @keyframes moveR {
+                0% {
+                    transform: translateX(0);
+                }
+    
+                50% {
+                    transform: translateX(140%);
+                }
+    
+                100% {
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+}
